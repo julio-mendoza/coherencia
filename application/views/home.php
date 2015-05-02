@@ -7,7 +7,7 @@
 				</h3>
 			</div> <!-- /.widget-header -->
 			<div class="widget-content">
-				<?php echo ($home_content ? $home_content->app_value : ''); ?>
+				<?php echo ($home_content ? $home_content->text_value : ''); ?>
 			</div> <!-- /.widget-content -->
 		</div> <!-- /.widget -->
 	</div> <!-- /.span8 -->

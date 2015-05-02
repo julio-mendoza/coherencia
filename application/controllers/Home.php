@@ -8,8 +8,8 @@ class Home extends MY_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('ui/App_Entry', '', TRUE);
-		$data['home_content'] = $this->App_Entry->get_by_key('home_content');
+		$this->load->model('common/App_Value_Model', '', TRUE);
+		$data['home_content'] = $this->App_Value_Model->get_by_code('home_content');
 		$data['title'] = 'Coherencia | El Congreso que te mereces';
 		$this->to_main_view('home', $data);
 	}
