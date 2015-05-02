@@ -1,0 +1,6 @@
+# Ignore Composer downloads
+application/config/development/
+user_guide/
+vendor/
+.env
+web.config
