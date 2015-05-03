@@ -1,6 +1,8 @@
 # Ignore Composer downloads
 application/config/development/
 user_guide/
+scripts/
+slate/
 vendor/
 .env
 web.config
