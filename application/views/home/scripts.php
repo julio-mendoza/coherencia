@@ -1,0 +1,1 @@
+<script src="<?php echo $base_url; ?>resources/app/home/main.js"></script>

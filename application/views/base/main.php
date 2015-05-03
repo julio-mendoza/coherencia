@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="cohHome">
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,32 +11,29 @@
 
 	<title><?php echo $title; ?></title>
 	
-	<!-- Styles -->
-	<link href="<?php echo $base_url; ?>/resources/css/bootstrap.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>/resources/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>/resources/css/bootstrap-overrides.css" rel="stylesheet">
+	<!-- Library Styles -->
+	<link href="<?php echo $base_url; ?>resources/css/bootstrap.css" rel="stylesheet">
+	<link href="<?php echo $base_url; ?>resources/css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="<?php echo $base_url; ?>resources/css/bootstrap-overrides.css" rel="stylesheet">
+	<link href="<?php echo $base_url; ?>resources/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet">
+	<link href="<?php echo $base_url; ?>resources/css/slate.css" rel="stylesheet">
+	<link href="<?php echo $base_url; ?>resources/css/slate-responsive.css" rel="stylesheet">
+	<link href="<?php echo $base_url; ?>resources/css/components/error.css" rel="stylesheet">
 
-	<link href="<?php echo $base_url; ?>/resources/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-
-	<link href="<?php echo $base_url; ?>/resources/css/slate.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>/resources/css/slate-responsive.css" rel="stylesheet">
-
-	<link href="<?php echo $base_url; ?>/resources/css/components/error.css" rel="stylesheet">
+	<!-- View Styles -->
 	<?php echo $view_styles; ?>
 
-	<!-- Javascript -->
-	<script src="<?php echo $base_url; ?>/resources/js/jquery-1.7.2.min.js"></script>
-	<script src="<?php echo $base_url; ?>/resources/js/jquery-ui-1.8.21.custom.min.js"></script>
-	<script src="<?php echo $base_url; ?>/resources/js/jquery.ui.touch-punch.min.js"></script>
-	<script src="<?php echo $base_url; ?>/resources/js/bootstrap.js"></script>
+	<!-- Library Scripts -->
+	<script src="<?php echo $base_url; ?>resources/js/jquery-1.7.2.min.js"></script>
+	<script src="<?php echo $base_url; ?>resources/js/jquery-ui-1.8.21.custom.min.js"></script>
+	<script src="<?php echo $base_url; ?>resources/js/jquery.ui.touch-punch.min.js"></script>
+	<script src="<?php echo $base_url; ?>resources/js/bootstrap.js"></script>
+	<script src="<?php echo $base_url; ?>resources/js/angular/angular.js"></script>
 
-	<!-- TODO: check if it is needed -->
-	<script src="<?php echo $base_url; ?>/resources/js/Slate.js"></script>
-
+	<!-- Header Scripts -->
 	<?php echo $view_scripts; ?>
 </head>
 <body>
-
 	<div id="header">
 		<div class="container">
 			<h1>

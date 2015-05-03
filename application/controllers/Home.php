@@ -8,9 +8,18 @@ class Home extends MY_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('common/Config_Value_Model', '', TRUE);
-		$data['home_content'] = $this->Config_Value_Model->get_by_code('home_body');
 		$data['title'] = 'Coherencia | El Congreso que te mereces';
-		$this->to_main_view('home', $data);
+		$data['view_scripts'] = $this->parse_view('home/scripts');
+		$this->to_main_view('home/main', $data);
+	}
+
+	/**
+	 * Default Action /home/info
+	 */
+	public function info()
+	{
+		$this->load->model('common/Config_Value_Model', '', TRUE);
+		$data['home_body'] = $this->Config_Value_Model->get_by_code('home_body');
+		$this->load->view('home/info', $data);
 	}
 }
