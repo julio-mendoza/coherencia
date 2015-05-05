@@ -9,6 +9,7 @@ class Home extends MY_Controller {
 	public function index()
 	{
 		$data['title'] = 'Coherencia | El Congreso que te mereces';
+		$data['view_styles'] = $this->parse_view('home/styles');
 		$data['view_scripts'] = $this->parse_view('home/scripts');
 		$this->to_main_view('home/main', $data);
 	}

@@ -13,13 +13,13 @@
 					<th>Apellidos y Nombres</th>
 					<th>Rol</th>
 				</tr>
-      			</thead>
+				</thead>
 				<tbody>
 				<?php foreach ($judges as $judge) { ?>
 					<tr>
 						<td><?php echo "$judge->last_name, $judge->first_name"; ?></td>
 						<td><?php echo $judge->charge; ?></td>
-			        </tr>
+					</tr>
 				<?php } ?>
 				</tbody>
 			</table>
