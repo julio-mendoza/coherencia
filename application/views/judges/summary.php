@@ -6,6 +6,8 @@
 			</h3>
 		</div> <!-- /.widget-header -->
 		<div class="widget-content">
+			<h4>Miembros:</h4>
+			<br />
 			<?php if (count($judges) > 0) { ?>
 			<table class="table">
 				<thead>
@@ -26,6 +28,15 @@
 			<?php } else { ?>
 			Aún no se ha establecido un comit&eacute; evaluador.
 			<?php } ?>
+
+			<br />
+			<h4>Funciones:</h4>
+			<br />
+			<ul>
+				<li>Funci&oacute;n 01</li>
+				<li>Funci&oacute;n 02</li>
+				<li>Funci&oacute;n N</li>
+			</ul>
 		</div> <!-- /.widget-content -->
 	</div> <!-- /.widget -->
 </div> <!-- /.span4 -->
