@@ -78,7 +78,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a href="<?php echo site_url('/judges'); ?>">
 							<i class="icon-copy"></i>
 							Comit&eacute; Evaluador
 						</a>
