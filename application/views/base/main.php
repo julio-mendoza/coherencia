@@ -12,23 +12,23 @@
 	<title><?php echo $title; ?></title>
 	
 	<!-- Library Styles -->
-	<link href="<?php echo $base_url; ?>resources/css/bootstrap.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>resources/css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>resources/css/bootstrap-overrides.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>resources/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>resources/css/slate.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>resources/css/slate-responsive.css" rel="stylesheet">
-	<link href="<?php echo $base_url; ?>resources/css/components/error.css" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/bootstrap.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/bootstrap-responsive.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/bootstrap-overrides.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/ui-lightness/jquery-ui-1.8.21.custom.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/slate.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/slate-responsive.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/components/error.css'); ?>" rel="stylesheet">
 
 	<!-- View Styles -->
 	<?php echo $view_styles; ?>
 
 	<!-- Library Scripts -->
-	<script src="<?php echo $base_url; ?>resources/js/jquery-1.7.2.min.js"></script>
-	<script src="<?php echo $base_url; ?>resources/js/jquery-ui-1.8.21.custom.min.js"></script>
-	<script src="<?php echo $base_url; ?>resources/js/jquery.ui.touch-punch.min.js"></script>
-	<script src="<?php echo $base_url; ?>resources/js/bootstrap.js"></script>
-	<script src="<?php echo $base_url; ?>resources/js/angular/angular.js"></script>
+	<script src="<?php echo base_url('resources/js/jquery-1.7.2.min.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/js/jquery-ui-1.8.21.custom.min.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/js/jquery.ui.touch-punch.min.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/js/bootstrap.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/js/angular/angular.js'); ?>"></script>
 
 	<!-- Header Scripts -->
 	<?php echo $view_scripts; ?>
@@ -65,70 +65,41 @@
       		</a>
       		<div class="nav-collapse">
       			<ul class="nav">
-      				<li class="nav-icon">
-      					<a href="default.htm">
-      						<i class="icon-home"></i><span>Home</span>
-      					</a>
-      				</li>
-					<li class="dropdown">					
-						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="icon-th"></i>
-							Components
-							<b class="caret"></b>
+					<li class="nav-icon">
+						<a href="default.htm">
+							<i class="icon-home"></i>
+							<span>Principal</span>
 						</a>
-						<ul class="dropdown-menu">
-							<li><a href="forms.html">Forms</a></li>
-							<li><a href="ui-elements.html">UI Elements</a></li>
-							<li><a href="grid.html">Grid Layout</a></li>
-							<li><a href="tables.html">Tables</a></li>
-							<li><a href="widgets.html">Widget Boxes</a></li>
-							<li><a href="charts.html">Charts</a></li>
-							<li><a href="tabs.html">Tabs & Accordion</a></li>
-							<li><a href="buttons.html">Buttons</a></li>
-						</ul>
 					</li>
-					<li class="dropdown">					
-						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+					<li>
+						<a href="javascript:;">
+							<i class="icon-th"></i>
+							Prop&oacute;n tu Candidato
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
 							<i class="icon-copy"></i>
-							Sample Pages
-							<b class="caret"></b>
-						</a>	
-					
-						<ul class="dropdown-menu">
-							<li><a href="invoice.html">Invoice</a></li>
-							<li><a href="faq.html">FAQ</a></li>
-							<li><a href="pricing.html">Pricing Plans</a></li>
-							<li><a href="gallery.html">Image Gallery</a></li>
-							<li><a href="wizard.html">Wizard</a></li>
-							<li><a href="reports.html">Reports</a></li>
-							<li><a href="calendar.html">Calendar</a></li>
-						</ul>    				
+							Comit&eacute; Evaluador
+						</a>
 					</li>
-					<li class="dropdown active">					
-						<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
-							<i class="icon-external-link"></i>
-							Other Pages
-							<b class="caret"></b>
-						</a>	
-					
-						<ul class="dropdown-menu">							
-							<li><a href="login.html">Login</a></li>
-							<li><a href="signup.html">Signup</a></li>
-							<li><a href="error.html">Error</a></li>
-							<li class="dropdown">
-								<a href="javascript:;">
-									Dropdown Menu									
-									<i class="icon-chevron-right sub-menu-caret"></i>
-								</a>
-								
-								<ul class="dropdown-menu sub-menu">
-			                        <li><a href="javascript:;">Dropdown #1</a></li>
-			                        <li><a href="javascript:;">Dropdown #2</a></li>
-			                        <li><a href="javascript:;">Dropdown #3</a></li>
-			                        <li><a href="javascript:;">Dropdown #4</a></li>
-			                    </ul>
-							</li>
-						</ul>    				
+					<li>
+						<a href="javascript:;">
+							<i class="icon-copy"></i>
+							El Congreso que te mereces
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-copy"></i>
+							Evaluaci&oacute;n
+						</a>
+					</li>
+					<li>
+						<a href="javascript:;">
+							<i class="icon-copy"></i>
+							Administraci&oacute;n
+						</a>
 					</li>
 				</ul>
 				<ul class="nav pull-right">
