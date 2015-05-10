@@ -51,7 +51,7 @@
 						</p>
 					</div> <!-- /.info-details -->				
 					<div class="info-avatar">
-						<img src="<?php echo $base_url; ?>/resources/img/avatar.jpg" alt="avatar">
+						<img src="<?php echo base_url('resources/img/avatar.jpg'); ?>" alt="avatar">
 					</div> <!-- /.info-avatar -->
 				</div> <!-- /#info-menu -->
 			</div> <!-- /#info -->
@@ -66,7 +66,7 @@
       		<div class="nav-collapse">
       			<ul class="nav">
 					<li class="nav-icon">
-						<a href="default.htm">
+						<a href="<?php echo site_url('/'); ?>">
 							<i class="icon-home"></i>
 							<span>Principal</span>
 						</a>
