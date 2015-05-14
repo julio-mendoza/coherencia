@@ -1,0 +1,9 @@
+# Ignore Composer downloads
+application/config/development/
+user_guide/
+resources/js/angular/i18n
+scripts/
+slate/
+vendor/
+.env
+web.config

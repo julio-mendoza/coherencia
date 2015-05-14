@@ -1,0 +1,13 @@
+{
+	"description" : "Coherencia::El Congreso que te mereces",
+	"name" : "coherencia/coherencia",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.2.4",
+		"codeigniter/framework": "3.0.0",
+		"ext-memcached": "*"
+	},
+	"require-dev": {
+		"mikey179/vfsStream": "1.1.*"
+	}
+}
