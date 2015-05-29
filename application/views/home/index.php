@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="cohApp">
+<html lang="en" ng-app="cohApp.Main">
 <head>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,13 +21,17 @@
 	<link href="<?php echo base_url('resources/css/components/error.css'); ?>" rel="stylesheet">
 
 	<!-- View Styles -->
-	<?php echo $view_styles; ?>
+	<link href="<?php echo base_url('resources/css/app.css'); ?>" rel="stylesheet">
+	<link href="<?php echo base_url('resources/css/components/signin.css'); ?>" rel="stylesheet">
 </head>
 <body>
+	<!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 	<div id="header">
 		<div class="container">
 			<h1>
-				<a href="default.htm">Coherencia</a>
+				<a ng-href="#/">Coherencia</a>
 			</h1>
 			<div id="info">
 				<a href="javascript:;" id="info-trigger">
@@ -56,39 +60,39 @@
       		<div class="nav-collapse">
       			<ul class="nav">
 					<li class="nav-icon">
-						<a href="<?php echo site_url('/'); ?>">
+						<a ng-href="#/">
 							<i class="icon-home"></i>
 							<span>Principal</span>
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a ng-href="#/candidatos/nuevo">
 							<i class="icon-th"></i>
-							Prop&oacute;n tu Candidato
+							Mi Candidato
 						</a>
 					</li>
 					<li>
-						<a href="<?php echo site_url('/judges'); ?>">
+						<a ng-href="#/comite-evaluador">
 							<i class="icon-copy"></i>
-							Comit&eacute; Evaluador
+							El Comit&eacute; Evaluador
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a ng-href="#/congreso">
 							<i class="icon-copy"></i>
-							El Congreso que te mereces
+							Mi Congreso
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a ng-href="#/evaluaciones">
 							<i class="icon-copy"></i>
-							Evaluaci&oacute;n
+							Las Evaluaciones
 						</a>
 					</li>
 					<li>
-						<a href="javascript:;">
+						<a ng-href="#/admin/home">
 							<i class="icon-copy"></i>
-							Administraci&oacute;n
+							Soy Administrador
 						</a>
 					</li>
 				</ul>
@@ -104,8 +108,8 @@
 		</div> <!-- /.container -->
 	</div> <!-- /#nav -->
 
-	<div class="container">
-		<?php echo $body; ?>		
+	<div class="container" ng-controller="MainCtrl">
+		<div ng-view=""></div>
 	</div> <!-- /container -->
 
 	<div id="footer">
@@ -114,6 +118,12 @@
 		</div> <!-- /.container -->
 	</div> <!-- /#footer -->
 
+	<script type="text/javascript">
+		window.appSettings = {
+			basePath: '<?php echo base_url("/"); ?>',
+			restPath: '<?php echo site_url("/api/"); ?>'	
+		};
+	</script>
 	<!-- Library Scripts -->
 	<script src="<?php echo base_url('resources/js/jquery-1.7.2.min.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/jquery-ui-1.8.21.custom.min.js'); ?>"></script>
@@ -121,13 +131,27 @@
 	<script src="<?php echo base_url('resources/js/bootstrap.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular-animate.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/js/angular/angular-aria.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular-cookies.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular-loader.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/js/angular/angular-messages.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular-resource.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular-route.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular-sanitize.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/js/angular/angular-touch.js'); ?>"></script>
-	<!-- Header Scripts -->
-	<?php echo $view_scripts; ?>
+	<!-- JQuery Widgets -->
+	<script src="<?php echo base_url('resources/js/plugins/smartwizard/jquery.smartWizard-2.0.modified.js'); ?>"></script>
+	<!-- App Scripts -->
+	<script src="<?php echo base_url('resources/app/app.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/common/main.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/common/services/config-values.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/home/controllers/info.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/home/controllers/main.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/judges/main.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/judges/controllers/judges-list.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/judges/services/judges.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/login/main.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/login/controllers/login.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/login/controllers/loginNew.js'); ?>"></script>
 </body>
 </html>

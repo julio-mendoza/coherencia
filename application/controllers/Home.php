@@ -8,10 +8,8 @@ class Home extends MY_Controller {
 	 */
 	public function index()
 	{
-		$data['title'] = 'Coherencia | El Congreso que te mereces';
-		$data['view_styles'] = $this->parse_view('home/styles');
-		$data['view_scripts'] = $this->parse_view('home/scripts');
-		$this->to_main_view('home/main', $data);
+		$data['title'] = 'Coherencia - ¡El Congreso que te mereces!';
+		$this->load->view('home/index', $data);
 	}
 
 	/**
@@ -19,7 +17,7 @@ class Home extends MY_Controller {
 	 */
 	public function info()
 	{
-		$this->load->model('common/Config_Value_Model', '', TRUE);
+		$this->load->model('common/Config_Value_Model');
 		$data['home_body'] = $this->Config_Value_Model->get_by_code('home_body');
 		$this->load->view('home/info', $data);
 	}

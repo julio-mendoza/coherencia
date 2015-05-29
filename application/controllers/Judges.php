@@ -8,7 +8,7 @@ class Judges extends MY_Controller {
 	 */
 	public function index()
 	{
-		$this->load->model('judges/Judge_Model', '', TRUE);
+		$this->load->model('judges/Judge_Model');
 		$data['judges'] = $this->Judge_Model->get_all();
 		$this->to_main_view('judges/main', $data);
 	}
@@ -18,7 +18,7 @@ class Judges extends MY_Controller {
 	 */
 	public function summary()
 	{
-		$this->load->model('judges/Judge_Model', '', TRUE);
+		$this->load->model('judges/Judge_Model');
 		$data['judges'] = $this->Judge_Model->get_all();
 		$this->load->view('judges/summary', $data);
 	}

@@ -1,5 +1,11 @@
 @import url("font-awesome.css");
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,800);
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../font/OpenSans-Regular.eot');
+  src: url('../font/OpenSans-Regular.eot') format('embedded-opentype'), url('../font/OpenSans-Regular.woff') format('woff'), url('../font/OpenSans-Regular.ttf') format('truetype'), url('../font/OpenSans-Regular.svgz#FontAwesomeRegular') format('svg'), url('../font/OpenSans-Regular.svg#FontAwesomeRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*------------------------------------------------------------------
 
@@ -31,55 +37,43 @@
 */
 
 body {
-	
 	font: 12px/1.7em 'Open Sans', arial, sans-serif;
-	
 	background: #EFEFEF url(../img/bg.png) repeat 0 0;
 }
 
 p {	
 	margin-bottom: 2em;
-	
 	font: 12px/1.7em 'Open Sans', arial, sans-serif;
 }
-
-
-
 
 /*------------------------------------------------------------------
 [2. Header]
 */
 
 #header .container {
-	
 	height: 93px;
-	
 	background: #263849 url(../themes/slate/header-bg.png) repeat-x 0 0;
-	
 	border-bottom: 1px solid #16222C;
 }
 
 #header h1 {
-	background: url(../img/title.png) no-repeat 0 0;
+	/*background: url(../img/title.png) no-repeat 0 0;*/
 	width: 200px;
-	height: 27px;
-	line-height: 500px;
+	height: 35px;
+	/*line-height: 500px;*/
 	overflow: hidden;
 	color: white;
 	font-size: 32px;
 	position: relative;
 	top: 36px;
-	left: 15px;
+	left: 20px;
 }
 
-	#header h1 a {
-		display: block;
-	}
-	
-	
-	
-	
-
+#header h1 a {
+	display: block;
+	color: white;
+	text-decoration: none;
+}
 
 /*------------------------------------------------------------------
 [3. Info]

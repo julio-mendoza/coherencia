@@ -1,0 +1,19 @@
+<div ng-show="judges.length > 0">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Apellidos y Nombres</th>
+				<th>Rol</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="judge in judges">
+				<td>{{judge.last_name}}, {{judge.first_name}}</td>
+				<td>{{judge.charge}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div ng-show="judges.length === 0">
+	Aún no se ha establecido un comit&eacute; evaluador.
+</div>
