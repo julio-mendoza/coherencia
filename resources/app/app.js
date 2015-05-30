@@ -17,35 +17,35 @@
 		$routeProvider
 			.when('/', {
 				templateUrl: appSettings.basePath + 'resources/tpl/home/main.html',
-				controller: 'InfoCtrl'
+				controller: 'InfoController'
 			})
 			.when('/candidatos/nuevo', {
 				templateUrl: appSettings.basePath + 'resources/tpl/candidates/candidate-new.html',
-				controller: 'CandidatesNewCtrl'
+				controller: 'CandidatesNewController'
 			})
 			.when('/comite-evaluador', {
 				templateUrl: appSettings.basePath + 'resources/tpl/judges/main.html',
-				controller: 'JudgesListCtrl'
+				controller: 'JudgesListController'
 			})
 			.when('/congreso', {
 				templateUrl: appSettings.basePath + 'resources/tpl/candidates/main.html',
-				controller: 'CandidatesMainCtrl'
+				controller: 'CandidatesMainController'
 			})
 			.when('/evaluaciones', {
 				templateUrl: appSettings.basePath + 'resources/tpl/assessments/main.html',
-				controller: 'AssessmentsMainCtrl'
+				controller: 'AssessmentsMainController'
 			})
 			.when('/admin/home', {
 				templateUrl: appSettings.basePath + 'resources/tpl/admin/main.html',
-				controller: 'AdminMainCtrl'
+				controller: 'AdminMainController'
 			})
 			.when('/login', {
 				templateUrl: appSettings.basePath + 'resources/tpl/auth/login.html',
-				controller: 'LoginCtrl'
+				controller: 'LoginController'
 			})
 			.when('/login/new', {
 				templateUrl: appSettings.basePath + 'resources/tpl/auth/login-new.html',
-				controller: 'LoginNewCtrl'
+				controller: 'LoginNewController'
 			})
 			.otherwise({
 				redirectTo: '/'

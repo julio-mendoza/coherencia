@@ -1,62 +1,85 @@
-<div class="account-container login">
+<div class="account-container register" ng-controller="LoginNewController">
 	<div class="content clearfix">
-		<form action="./" method="post">
-			<h1>Registro de Usuario</h1>
+		<form name="newAccount" ng-submit="save()">
+			<h1>Crea tu Cuenta de Usuario</h1>
+
+			<div class="login-social">
+				<p><b>Utiliza tu cuenta de redes sociales:</b></p>
+
+				<div class="twitter">
+					<a href="#" class="btn_1">Login with Twitter</a>
+				</div>
+
+				<div class="fb">
+					<a href="#" class="btn_2">Login with Facebook</a>
+				</div>
+			</div>
 
 			<div class="login-fields">
-				<p>Ingresa tu Informaci&oacute;n Personal:</p>
+				<p><b>Ingresa tu Informaci&oacute;n Personal:</b></p>
 
 				<div class="field">
 					<label for="firstname">Nombres:</label>
-					<input type="text" id="firstname" name="firstname" value="" placeholder="Nombres" class="login username-field" />
+					<input type="text" id="firstname" name="firstname" value="" placeholder="Nombres" class="login" maxlength="100" ng-model="userAccount.person.first_name" required/>
 				</div> <!-- /field -->
 
 				<div class="field">
 					<label for="lastname">Apellidos:</label>
-					<input type="text" id="lastname" name="lastname" value="" placeholder="Apellidos" class="login username-field" />
-				</div> <!-- /field -->
-
-				<div class="field">
-					<label for="doi">DNI:</label>
-					<input type="text" id="doi" name="doi" value="" placeholder="DNI" class="login username-field" />
-				</div> <!-- /field -->
-
-				<div class="field">
-					<label for="doi">DNI:</label>
-					<input type="text" id="doi" name="doi" value="" placeholder="DNI" class="login username-field" />
-				</div> <!-- /field -->
-
-				<div class="field">
-					<label for="phone">Tel&eacute;fono:</label>
-					<input type="text" id="phone" name="phone" value="" placeholder="Tel&eacute;fono" class="login username-field" />
+					<input type="text" id="lastname" name="lastname" value="" placeholder="Apellidos" class="login" maxlength="100" ng-model="userAccount.person.last_name" required />
 				</div> <!-- /field -->
 
 				<div class="field">
 					<label for="email">Correo Electr&oacute;nico:</label>
-					<input type="email" id="email" name="email" value="" placeholder="Correo Electr&oacute;nico" class="login username-field" />
+					<input type="email" id="email" name="email" value="" placeholder="Correo Electr&oacute;nico" class="login" maxlength="100" ng-model="userAccount.person.primary_email_address" required />
 				</div> <!-- /field -->
 
-				<p>Crea tu cuenta de Usuario:</p>
+				<div class="field">
+					<label for="doi">DNI:</label>
+					<input type="text" id="doi" name="doi" value="" placeholder="DNI" class="login" maxlength="8" ng-model="userAccount.person.id_number" required />
+				</div> <!-- /field -->
+
+				<div class="field">
+					<label for="phone">Tel&eacute;fono:</label>
+					<input type="text" id="phone" name="phone" value="" placeholder="Tel&eacute;fono" class="login" maxlength="20" ng-model="userAccount.person.primary_phone_number" />
+				</div> <!-- /field -->
+
+				<span class="field-checkbox">
+					<input id="proposer" name="proposer" type="checkbox" class="field login-checkbox" tabindex="4" ng-model="userAccount.user.is_proposer" />
+					<label class="choice" for="proposer">Quiero proponer mi candidato.</label>
+				</span>
+
+				<div class="clearfix"></div>
+				
+				<p><b>Ingresa tus Credenciales:</b></p>
 				
 				<div class="field">
 					<label for="username">Nombre de Usuario:</label>
-					<input type="text" id="username" name="username" value="" placeholder="Nombre de Usuario" class="login username-field" />
+					<input type="text" id="username" name="username" value="" placeholder="Nombre de Usuario" class="login" maxlength="50" ng-model="userAccount.user.user_name" required />
 				</div> <!-- /field -->
 
 				<div class="field">
 					<label for="password">Contrase&ntilde;a:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Contrase&ntilde;a" class="login password-field"/>
+					<input type="password" id="password" name="password" value="" placeholder="Contrase&ntilde;a" class="login" maxlength="50" ng-model="userAccount.user.password" required />
 				</div> <!-- /password -->
 
 				<div class="field">
 					<label for="confirmpassword">Confirmar Contrase&ntilde;a:</label>
-					<input type="password" id="confirmpassword" name="confirmpassword" value="" placeholder="Confirmar Contrase&ntilde;a" class="login password-field"/>
+					<input type="password" id="confirmpassword" name="confirmpassword" value="" placeholder="Confirmar Contrase&ntilde;a" class="login" maxlength="50" ng-model="userAccount.user.password_confirm" required />
 				</div> <!-- /password -->
 			</div> <!-- /login-fields -->
-
+			
 			<div class="login-actions">
-				<button class="button btn btn-secondary btn-large">Registrarme</button>
+				<span class="login-checkbox">
+					<input id="agree" name="agree" type="checkbox" class="field login-checkbox" value="Agree" tabindex="4" required/>
+					<label class="choice" for="agree">He le&iacute;do y estoy de acuerdo con los T&eacute;rminos de Uso.</label>
+				</span>
+									
+				<button class="button btn btn-primary btn-large">Registrarme</button>
 			</div> <!-- .actions -->
 		</form>
 	</div> <!-- /content -->
 </div> <!-- /account-container -->
+<!-- Text Under Box -->
+<div class="login-extra">
+	¿Ya tienes tu cuenta? <a ng-href="#/login">Inicia Sesi&oacute;n</a>
+</div> <!-- /login-extra -->

@@ -7,7 +7,7 @@ class Judge_Model extends CI_Model {
 	 */
 	public function get_all()
 	{
-		$this->db->select('p.person_id, p.first_name, p.last_name, j.charge')
+		$this->db->select($this->fields())
 			->from('judge j')
 			->join('person p', 'j.person_id = p.person_id')
 			->where('is_enabled', true);
@@ -24,11 +24,11 @@ class Judge_Model extends CI_Model {
 		$result = NULL;
 
 		if (!is_null($id)) {
-			$this->db->select('p.person_id, p.first_name, p.last_name, j.charge')
-			->from('judge j')
-			->join('person p', 'j.person_id = p.person_id')
-			->where('is_enabled', true)
-			->where('j.person_id', $id);
+			$this->db->select($this->fields())
+				->from('judge j')
+				->join('person p', 'j.person_id = p.person_id')
+				->where('is_enabled', true)
+				->where('j.person_id', $id);
 
 			$query = $this->db->get();
 
@@ -38,5 +38,9 @@ class Judge_Model extends CI_Model {
 		}
 		
 		return $result;
+	}
+
+	private function fields() {
+		return 'p.person_id, p.first_name, p.last_name, j.charge';
 	}
 }

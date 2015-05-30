@@ -50,14 +50,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'home';
-//$route['404_override'] = 'errors/page_not_found';
+$route['404_override'] = 'errors/page_not_found';
 $route['translate_uri_dashes'] = FALSE;
 
 // REST Resources
+// |- Config Values Resource
+$route['api/cfgvalues']['get'] = 'api/common/config_Value_Resource/all';
+$route['api/cfgvalues/(:any)']['get'] = 'api/common/config_Value_Resource/by_code/$1';
+
 // |- Judges Resource
 $route['api/judges']['get'] = 'api/judges/judges_Resource/all';
 $route['api/judges/(:num)']['get'] = 'api/judges/judges_Resource/by_id/$1';
 
-// |- Config Values Resource
-$route['api/cfgvalues']['get'] = 'api/common/config_Value_Resource/all';
-$route['api/cfgvalues/(:any)']['get'] = 'api/common/config_Value_Resource/by_code/$1';
+// |- User Accounts Resource
+//$route['api/useraccounts']['get'] = 'api/auth/user_Accounts_Resource/all';
+//$route['api/useraccounts/(:num)']['get'] = 'api/auth/user_Accounts_Resource/by_id/$1';
+$route['api/useraccounts']['post'] = 'api/auth/user_Accounts_Resource/create';

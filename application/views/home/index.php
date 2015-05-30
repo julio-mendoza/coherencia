@@ -8,7 +8,6 @@
     <meta name="description" content="Coherencia, el congreso que te mereces">
     <meta name="author" content="Coherencia">
     <meta name="apple-mobile-web-app-capable" content="yes">
-
 	<title><?php echo $title; ?></title>
 	
 	<!-- Library Styles -->
@@ -22,9 +21,8 @@
 
 	<!-- View Styles -->
 	<link href="<?php echo base_url('resources/css/app.css'); ?>" rel="stylesheet">
-	<link href="<?php echo base_url('resources/css/components/signin.css'); ?>" rel="stylesheet">
 </head>
-<body>
+<body ng-controller="MainController">
 	<!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -39,14 +37,12 @@
 				</a>
 				<div id="info-menu">
 					<div class="info-details">
-						<h4>Welcome back, John D.</h4>
-						<p>Logged in as Admin.<br>
-							You have <a href="javascript:;">5 messages.</a>
+						<h4>¿Quieres participar activamente?
+							<a ng-href="#/login">Inicia Sesi&oacute;n</a></h4>
+						<p>No tienes cuenta?
+							<a ng-href="#/login/new">Reg&iacute;strate</a>
 						</p>
 					</div> <!-- /.info-details -->				
-					<div class="info-avatar">
-						<img src="<?php echo base_url('resources/img/avatar.jpg'); ?>" alt="avatar">
-					</div> <!-- /.info-avatar -->
 				</div> <!-- /#info-menu -->
 			</div> <!-- /#info -->
 		</div> <!-- /.container -->
@@ -108,7 +104,7 @@
 		</div> <!-- /.container -->
 	</div> <!-- /#nav -->
 
-	<div class="container" ng-controller="MainCtrl">
+	<div class="container">
 		<div ng-view=""></div>
 	</div> <!-- /container -->
 
@@ -144,6 +140,7 @@
 	<!-- App Scripts -->
 	<script src="<?php echo base_url('resources/app/app.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/app/common/main.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/common/directives/smart-wizard.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/app/common/services/config-values.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/app/home/controllers/info.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/app/home/controllers/main.js'); ?>"></script>
@@ -152,6 +149,7 @@
 	<script src="<?php echo base_url('resources/app/judges/services/judges.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/app/login/main.js'); ?>"></script>
 	<script src="<?php echo base_url('resources/app/login/controllers/login.js'); ?>"></script>
-	<script src="<?php echo base_url('resources/app/login/controllers/loginNew.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/login/controllers/login-new.js'); ?>"></script>
+	<script src="<?php echo base_url('resources/app/login/services/user-accounts.js'); ?>"></script>
 </body>
 </html>

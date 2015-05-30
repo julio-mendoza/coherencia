@@ -1,7 +1,7 @@
 (function(appSettings) {
 
 	angular.module('cohApp.Main')
-		.controller('MainCtrl', function($scope, ConfigValues) {
+		.controller('MainController', function($scope, ConfigValues) {
 			$scope.buildRoute = function(path) {
 				return appSettings.basePath + path;
 			};

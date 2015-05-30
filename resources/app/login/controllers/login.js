@@ -1,7 +1,7 @@
 (function(appSettings) {
 
 	angular.module('cohApp.Login')
-		.controller('LoginCtrl', function($scope) {
+		.controller('LoginController', function($scope) {
 			//$scope.
 		});
 
