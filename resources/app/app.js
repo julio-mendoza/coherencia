@@ -9,9 +9,9 @@
 		'ngRoute',
 		'ngSanitize',
 		'ngTouch',
-		'cohApp.Common',
-		'cohApp.Judges',
-		'cohApp.Login'
+		'cohApp.auth',
+		'cohApp.common',
+		'cohApp.Judges'
 	])
 	.config(function ($routeProvider) {
 		$routeProvider
@@ -43,9 +43,10 @@
 				templateUrl: appSettings.basePath + 'resources/tpl/auth/login.html',
 				controller: 'LoginController'
 			})
-			.when('/login/new', {
-				templateUrl: appSettings.basePath + 'resources/tpl/auth/login-new.html',
-				controller: 'LoginNewController'
+			.when('/usuario/nuevo', {
+				templateUrl: appSettings.basePath + 'resources/app/auth/newuseraccount.view.html',
+				controller: 'NewUserAccountController',
+				controllerAs: 'userAccount'
 			})
 			.otherwise({
 				redirectTo: '/'

@@ -9,7 +9,7 @@ class Home extends MY_Controller {
 	public function index()
 	{
 		$data['title'] = 'Coherencia - ¡El Congreso que te mereces!';
-		$this->load->view('home/index', $data);
+		$this->load->view('home/bootstrap_index', $data);
 	}
 
 	/**

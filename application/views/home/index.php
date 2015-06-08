@@ -95,7 +95,7 @@
 				<ul class="nav pull-right">
 					<li class="">
 						<form class="navbar-search pull-left">
-							<input type="text" class="search-query" placeholder="Search">
+							<input type="text" class="search-query" placeholder="Buscar">
 							<button class="search-btn"><i class="icon-search"></i></button>
 						</form>	    				
 					</li>
