@@ -104,6 +104,7 @@
     <script src="<?php echo base_url('resources/app/auth/useraccounts.service.js'); ?>"></script>
     <script src="<?php echo base_url('resources/app/common/common.module.js'); ?>"></script>
     <script src="<?php echo base_url('resources/app/common/match.directive.js'); ?>"></script>
+    <script src="<?php echo base_url('resources/app/common/numericonly.directive.js'); ?>"></script>
     <script src="<?php echo base_url('resources/app/common/smartwizard.directive.js'); ?>"></script>
     <script src="<?php echo base_url('resources/app/common/configvalues.service.js'); ?>"></script>
     <script src="<?php echo base_url('resources/app/home/controllers/info.js'); ?>"></script>

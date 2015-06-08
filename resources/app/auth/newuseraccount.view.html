@@ -40,7 +40,7 @@
 					
 					<div class="form-group" ng-class="{'has-error': (userAccountForm.dni.$invalid && (userAccountForm.dni.$touched || userAccountForm.$submitted)), 'has-success': (userAccountForm.dni.$valid && (userAccountForm.dni.$touched || userAccountForm.$submitted))}">
 						<label class="control-label sr-only" for="dni">(*) DNI:</label>
-						<input type="text" class="form-control" id="dni" name="dni" placeholder="(*) DNI" maxlength="8" ng-model="userAccount.person.id_number" ng-maxlength="8" ng-minlength="8" ng-required="true" />
+						<input type="text" class="form-control" id="dni" name="dni" placeholder="(*) DNI" maxlength="8" ng-model="userAccount.person.id_number" ng-maxlength="8" ng-minlength="8" ng-required="true" coh-numeric-only="true" />
 					</div>
 
 					<div class="form-group" ng-class="{'has-error': (userAccountForm.firstname.$invalid && (userAccountForm.firstname.$touched || userAccountForm.$submitted)), 'has-success': (userAccountForm.firstname.$valid && (userAccountForm.firstname.$touched || userAccountForm.$submitted))}">
