@@ -2,16 +2,13 @@
 
 require_once APPPATH.'/libraries/model/Coh_Model.php';
 
-class User_Model extends Coh_Model {
+class User_Model extends Coh_Model
+{
 	
 	public $user_id;
 	public $user_name;
 	public $password;
 	public $email_address;
-	public $created_on;
-	public $created_by;
-	public $modified_on;
-	public $modified_by;
 	
 	/**
 	 * Get All enabled configuration values
@@ -26,7 +23,8 @@ class User_Model extends Coh_Model {
 	/**
 	 * Get a configuration value by code
 	 */
-	public function get_by_id($id) {
+	public function get_by_id($id)
+	{
 		$result = NULL;
 
 		if (!is_null($id)) {
@@ -43,9 +41,34 @@ class User_Model extends Coh_Model {
 	}
 
 	/**
+	 * Validate User Model
+	 */
+	public function Validate()
+	{
+		$this->validate_user_name($this->user_name);
+
+		return true;
+	}
+
+	protected function validate_user_name($user_name)
+	{
+		$this->db->where('user_name', $user_name);
+		$query = $this->db->get('user');
+
+		if ($query->num_rows() > 0) {
+			throw new Coh_Model_Exception("USER_ALREADY_EXISTS", 101, "USER_ALREADY_EXISTS");
+		}
+	}
+
+	/**
 	 * Save this model to the database
 	 */
-	public function save() {
+	public function save()
+	{
+		parent::save();
+
+
+
 		$result = NULL;
 		
 		$this->password = password_hash($this->password, PASSWORD_DEFAULT);
@@ -66,14 +89,16 @@ class User_Model extends Coh_Model {
 	/**
 	 * Specify the fields or columns retrieved in queries
 	 */
-	protected function fields() {
+	protected function fields()
+	{
 		return 'user_id, user_name, email_address, created_on, created_by, modified_on, modified_by';
 	}
 
 	/**
 	 * Reset the values for this model's columns 
 	 */
-	protected function reset_fields() {
+	protected function reset_fields()
+	{
 		$this->user_id = NULL;
 		$this->user_name = NULL;
 		$this->password = NULL;

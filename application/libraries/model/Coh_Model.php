@@ -1,5 +1,7 @@
 <?php
 
+require_once APPPATH.'/libraries/model/Coh_Model_Exception.php';
+
 abstract class Coh_Model extends CI_Model {
 	
 	public $created_on;
@@ -14,14 +16,14 @@ abstract class Coh_Model extends CI_Model {
 	}
 
 	/**
-	 * Load this person model with the content of an array
+	 * Load this model with the content of an array or a plain object
 	 */
-	public function load_from_array($model_array) {
+	public function load_from_object($model_object) {
 		$this->reset_fields();
 
 		$reflector = $this->getReflector();
 		
-		foreach ($model_array as $field => $value) {
+		foreach ($model_object as $field => $value) {
 			if ($reflector->hasProperty($field)) {
 				$property = $reflector->getProperty($field);
 				$property->setValue($this, $value);
@@ -36,8 +38,17 @@ abstract class Coh_Model extends CI_Model {
 		return $this->reflector;
 	}
 
+	public function validate() {
+		return true;
+	}
+
+	public function save() {
+		if (!$this->validate()) {
+			throw new Coh_Model_Exception("UNEXPECTED_VALIDATE_EXCEPTION", 100, "UNEXPECTED_VALIDATE_EXCEPTION");
+		}
+	}
+
 	protected abstract function reset_fields();
 
 	protected abstract function fields();
-
 }

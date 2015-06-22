@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-require APPPATH.'/libraries/REST_Controller.php';
+require_once APPPATH.'/libraries/REST_Controller.php';
+require_once APPPATH.'/libraries/model/Coh_Model_Exception.php';
 
 class User_Accounts_Resource extends REST_Controller {
 
@@ -41,10 +42,36 @@ class User_Accounts_Resource extends REST_Controller {
 	 * Default Action POST /api/useraccounts/
 	 */
 	public function create_post() {
-		$user_account = $this->post();
-		$this->Person_Model->load_from_array($user_account['person']);
-		$this->Person_Model->save();
-		$this->User_Model->load_from_array($user_account['user']);
-		$this->User_Model->save();
+		try {
+			$this->db->trans_begin();
+
+			$user_account = $this->post();
+			
+			$this->Person_Model->load_from_object($user_account['person']);
+			$person = $this->Person_Model->save();
+
+			$this->User_Model->load_from_object($user_account['user']);
+			$user = $this->User_Model->save();
+
+			//TODO: Implement this tomorrow
+			//$this->Person_Model->assign_user($this->User_Model);
+
+			if ($this->db->trans_status()) {
+				$this->db->trans_commit();
+				$this->response(array(
+					'success' => 'USER_ACCOUNT_CREATED',
+					'person' => $person,
+					'user' => $user), 200);
+			} else {
+				$this->db->trans_rollback();
+				$this->response(array('error' => 'TRANSACTION_FAILED'), 500);
+			}
+		} catch(Coh_Model_Exception $model_exception) {
+			$this->db->trans_rollback();
+			$this->response(array('error' => $model_exception->get_error_code()), 500);
+		} catch(Exception $exception) {
+			$this->db->trans_rollback();
+			$this->response(array('error' => $exception->getMessage()), 500);
+		}
 	}
 }

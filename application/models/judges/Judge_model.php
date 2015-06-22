@@ -40,6 +40,10 @@ class Judge_Model extends CI_Model {
 		return $result;
 	}
 
+	public function save() {
+		
+	}
+
 	private function fields() {
 		return 'p.person_id, p.first_name, p.last_name, j.charge';
 	}
